@@ -202,6 +202,33 @@
             <li>Feature 3</li>
             
         </ul>
+
+        <div id="extraDetails" class="details hidden">
+            <h3>Additional Features</h3>
+            <p>Our product also includes:</p>
+            <ul>
+                <li>Advanced security features</li>
+                <li>Seamless integration with other tools</li>
+                <li>24/7 customer support</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+       
+        document.getElementById('learnMore').addEventListener('click', function () {
+            const detailsSection = document.getElementById('extraDetails');
+            detailsSection.classList.toggle('hidden');
+            
+            
+            if (detailsSection.classList.contains('hidden')) {
+                this.textContent = 'More Details';
+            } else {
+                this.textContent = 'Hide Details';
+            }
+        });
+    </script>
+
         <button id="learnMore">More Details</button>
     </section>
     <div class= "video-container">
