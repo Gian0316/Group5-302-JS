@@ -15,7 +15,7 @@
         }
 
         .hidden-content {
-            display: none; /* Initially hide the sections */
+            display: none; 
         }
        
         .navbar {
@@ -168,6 +168,138 @@
             font-size: 20px;
             font-weight: bold;
         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+          }
+      
+          h1 {
+  
+            color: black;
+            margin-top: 50px;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+          }
+      
+          .price-btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            animation: bounce 2s infinite;
+          }
+          .price-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+          }
+      
+          .buy-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+          }
+          .buy-btn:enabled:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+          }
+          .buy-btn.purchased {
+            background-color: gray;
+            cursor: not-allowed;
+            box-shadow: none;
+          }
+      
+          .modal-btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          }
+          .modal-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+          }
+          .modal-btn.pay {
+            background-color: #4CAF50;
+            color: white;
+          }
+          .modal-btn.debt {
+            background-color: #FF9800;
+            color: white;
+          }
+      
+          #price-display {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+          }
+      
+        
+          #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+          }
+      
+          .modal-content {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          }
+      
+          
+          @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+              transform: translateY(0);
+            }
+            40% {
+              transform: translateY(-10px);
+            }
+            60% {
+              transform: translateY(-5px);
+            }
+          }
+      
+          @keyframes background-move {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
 
     </style>
 </head>
@@ -189,20 +321,19 @@
         <img src="https://www.apple.com/v/airpods/x/images/overview/pro_endframe__e2wscfy18pme_large.jpg" width="75%"/>
         <h1>Discover Our Product</h1>
         <h2>The newly improve Airpods 12 </h2>
-        <h2> Plan on buying? press Learn More</h2>
-        <a href="#features" class="cta-button">Learn More</a>
+     
+
     </section>
 
     <section id="features">
         <h2>Product Features</h2>
         <p>Discover the amazing capabilities of our product.</p>
         <ul>
-            <li>Feature 1</li
             <li>Feature 1</li>
             <li>Feature 2</li>
             <li>Feature 3</li>
-            <li>Feature 3</li>
-            
+            <br>
+            <button id="learnMore">More Details</button>
         </ul>
 
         <div id="extraDetails" class="details hidden">
@@ -216,22 +347,7 @@
         </div>
     </section>
 
-    <script>
-       
-        document.getElementById('learnMore').addEventListener('click', function () {
-            const detailsSection = document.getElementById('extraDetails');
-            detailsSection.classList.toggle('hidden');
-            
-            
-            if (detailsSection.classList.contains('hidden')) {
-                this.textContent = 'More Details';
-            } else {
-                this.textContent = 'Hide Details';
-            }
-        });
-    </script>
-
-        <button id="learnMore">More Details</button>
+        
     </section>
     <div class= "video-container">
     <section id="demo">
@@ -255,14 +371,70 @@
     </section>
 
     <section id="pricing">
-        <h2>Pricing</h2>
-        <p>Choose a plan that works for you.</p>
-        <ul>
-            <li>Basic Plan - $10/month</li>
-            <li>Premium Plan - $20/month</li>
-        </ul>
-    </section>
-
+      </head>
+      <body>
+        <h1>Choose Your AirPods</h1>
+        <button class="price-btn" onclick="select('AirPods', 100, 10)">AirPods</button>
+        <button class="price-btn" onclick="select('AirPods Pro', 200, 20)">AirPods Pro</button>
+        <button class="price-btn" onclick="select('AirPods Pro Max', 300, 30)">AirPods Pro Max</button>
+      
+        <div id="price-display">Select to see the price</div>
+        <button id="buy-btn" class="buy-btn" onclick="openModal()" disabled>Buy Now</button>
+      
+        <div id="modal">
+          <div class="modal-content">
+            <h2>Payment Option</h2>
+            <p>How would you like to pay for the <span id="selected-item"></span>?</p>
+            <button class="modal-btn pay" onclick="confirmPurchase('full')">Pay Full Price</button>
+            <button class="modal-btn debt" onclick="confirmPurchase('debt')">Buy on Debt</button>
+          </div>
+        </div>
+      
+        <script>
+          let selectedAirPods = null;
+      
+          function select(Name, fullPrice, monthlyPrice) {
+            selectedAirPods = { name: Name, fullPrice: fullPrice, monthlyPrice: monthlyPrice };
+            const display = document.getElementById('price-display');
+            const buyButton = document.getElementById('buy-btn');
+            display.textContent = `You selected the ${Name}: $${fullPrice} full price or $${monthlyPrice}/month.`;
+            buyButton.disabled = false;
+            buyButton.textContent = "Buy Now";
+            buyButton.classList.remove('purchased');
+          }
+      
+          function openModal() {
+            if (selectedAirPods) {
+              document.getElementById('modal').style.display = 'flex';
+              document.getElementById('selected-item').textContent = `${selectedAirPods.name}`;
+            }
+          }
+      
+          function confirmPurchase(option) {
+            document.getElementById('modal').style.display = 'none';
+            const buyButton = document.getElementById('buy-btn');
+            let message;
+      
+            if (option === 'full') {
+              message = `You have purchased the ${selectedAirPods.name} for $${selectedAirPods.fullPrice} (full price).`;
+            } else if (option === 'debt') {
+              message = `You have chosen to purchase the ${selectedAirPods.name} on debt for $${selectedAirPods.monthlyPrice}/month.`;
+            }
+      
+            alert(message);
+            buyButton.textContent = "Purchased";
+            buyButton.disabled = true;
+            buyButton.classList.add('purchased');
+          }
+        </script>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
     <section id="contact">
         <h2>Contact Us</h2>
         <form id="contactForm">
@@ -285,8 +457,18 @@
 
     <script>
         document.getElementById('learnMore').addEventListener('click', function () {
-            document.getElementById('modal').classList.remove('hidden');
+            const detailsSection = document.getElementById('extraDetails');
+            detailsSection.classList.toggle('hidden');
+            
+            
+            if (detailsSection.classList.contains('hidden')) {
+                this.textContent = 'More Details';
+            } else {
+                this.textContent = 'Hide Details';
+            }
         });
+        
+    
 
         document.getElementById('closeModal').addEventListener('click', function () {
             document.getElementById('modal').classList.add('hidden');
