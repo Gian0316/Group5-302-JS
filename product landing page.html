@@ -99,25 +99,30 @@
         }
 
         #features {
-            background: linear-gradient(to bottom, #ffe4b5, #ffc58f);
+          background: linear-gradient(to bottom, #385a79, #7777bd);
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          font-style: italic;
         }
 
         #demo {
-        
-            background: linear-gradient(to bottom, #d8bfd8, #c1a3c1);
+        font-style: italic;
+          background: linear-gradient(to bottom, #385a79, #7777bd);
         }
 
         #testimonials {
-            background: linear-gradient(to bottom, #add8e6, #87cefa);
+          background: linear-gradient(to bottom, #385a79, #7777bd);
             font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
         }
 
         #pricing {
-            background: linear-gradient(to bottom, #90ee90, #77dd77);
+          background: linear-gradient(to bottom, #385a79, #7777bd);
+          font-style: italic;
         }
 
         #contact {
-            background: linear-gradient(to bottom, #ffb6c1, #ff9999);
+          background: linear-gradient(to bottom, #385a79, #7777bd);
+          font-style: italic;
         }
 
         button {
@@ -177,14 +182,14 @@
       
           h1 {
   
-            color: black;
+            color: rgb(241, 227, 227);
             margin-top: 50px;
             font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
           }
       
           .price-btn {
-            padding: 10px 20px;
+            padding: 10px 200px;
             margin: 10px;
             font-size: 16px;
             cursor: pointer;
@@ -204,7 +209,7 @@
       
           .buy-btn {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 10px 200px;
             font-size: 16px;
             background-color: #4CAF50;
             color: white;
@@ -212,6 +217,7 @@
             border-radius: 4px;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            
           }
           .buy-btn:enabled:hover {
             background-color: #45a049;
@@ -243,7 +249,7 @@
             color: white;
           }
           .modal-btn.debt {
-            background-color: #FF9800;
+            background: linear-gradient(to bottom, #08090a, #2c2c3b);
             color: white;
           }
       
@@ -268,7 +274,7 @@
           }
       
           .modal-content {
-            background: white;
+            background: linear-gradient(to bottom, #08090a, #2c2c3b);
             color: #333;
             padding: 20px;
             border-radius: 8px;
@@ -302,16 +308,17 @@
           }
 
           #contact {
-                background: linear-gradient(to bottom, #ffb6c1, #ff9999);
+            background: linear-gradient(to bottom, #08090a, #2c2c3b);
                 padding: 40px 20px;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
             #contact h2 {
                 text-align: center;
-                color: white;
+                color: rgb(255, 255, 255);
                 margin-bottom: 20px;
                 font-size: 2em;
+                font-style: italic;
             }
             #contactForm {
                 max-width: 500px;
@@ -325,13 +332,14 @@
                 display: block;
                 font-weight: bold;
                 margin-bottom: 5px;
-                color: white;
+                color: rgb(79, 12, 110);
+                font-style: italic;
             }
             input, textarea {
                 width: 100%;
                 padding: 10px;
                 border-radius: 5px;
-                border: 1px solid #ddd;
+                border: 1px solid #2e1686f1;
                 transition: box-shadow 0.3s ease, transform 0.3s ease;
             }
             input:focus, textarea:focus {
@@ -345,7 +353,8 @@
             }
             button {
               padding: 10px;
-                background: #007acc;
+                background: rgb(79, 12, 110);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
                 color: white;
                 border: none;
                 border-radius: 5px;
@@ -380,6 +389,7 @@
             #formStatus.error {
                 background-color: #f44336;
             }
+            
 
     </style>
 </head>
@@ -409,9 +419,9 @@
         <h2>Product Features</h2>
         <p>Discover the amazing capabilities of our product.</p>
         <ul>
-            <li>Feature 1</li>
-            <li>Feature 2</li>
-            <li>Feature 3</li>
+            <li>High-quality sound with active noise cancellation for an immersive listening experience. </li>
+            <li>Seamless connectivity with Apple devices, featuring automatic pairing and easy switching.</li>
+            
             <br>
             <button id="learnMore">More Details</button>
         </ul>
@@ -420,9 +430,25 @@
             <h3>Additional Features</h3>
             <p>Our product also includes:</p>
             <ul>
-                <li>Advanced security features</li>
-                <li>Seamless integration with other tools</li>
-                <li>24/7 customer support</li>
+                <li>Transparency mode to stay aware of your surroundings while listening.</li>
+                <br>
+                <li>Adaptive EQ that adjusts audio to fit the shape of your ear.</li>
+                <br>
+                <li>Spatial audio with dynamic head tracking for theater-like sound.</li>
+                <br>
+                <li>Sweat and water resistance, ideal for workouts and outdoor activities.</li>
+                <br>
+                <li>Long battery life with multiple charges from the compact charging case.</li>
+                <br>
+                <li>Quick charge feature for up to an hour of listening with just a few minutes of charging.</li>
+                <br>
+                <li>Siri voice assistant integration for hands-free control.</li>
+                <br>
+                <li>Touch controls for music playback, calls, and volume adjustments.</li>
+                <br>
+                <li>Automatic device switching for a seamless experience across Apple devices.</li>
+                <br>
+                <li>Compact and lightweight design for maximum comfort and portability.</li>
             </ul>
         </div>
     </section>
@@ -439,15 +465,22 @@
 </div>
     <section id="testimonials">
         <h2>REVIEWS</h2>
-        <p>In this section, we delve into the experiences and feedback shared by our customers who have had the opportunity to use AirPods. These reviews serve as a valuable source of insight, shedding light on how the product performs in real-world scenarios. They provide a comprehensive look into various aspects of the AirPods, including their sound quality, comfort, battery performance, ease of use, and design aesthetics.</p>
-        <p>By highlighting both positive feedback and constructive criticism, this section offers a balanced perspective that showcases the features our customers appreciate most and identifies areas where the product can be enhanced. Each review represents a unique experience, reflecting the diverse needs and preferences of our users, from casual listeners to tech enthusiasts.</p>
-        <p>Our goal in presenting these reviews is to provide potential buyers with a detailed overview of the product's performance and reliability. Through the voices of actual users, we hope to offer an authentic and relatable understanding of what it’s like to own and use AirPods in daily life. Whether you’re considering them for personal use, work, or entertainment, these customer testimonials will help you make an informed decision by offering real-world insights into the AirPods' capabilities and value.</p>
+        <h2>In this section, we delve into the experiences and feedback shared by our customers who have had the opportunity to use AirPods. These reviews serve as a valuable source of insight, shedding light on how the product performs in real-world scenarios. They provide a comprehensive look into various aspects of the AirPods, including their sound quality, comfort, battery performance, ease of use, and design aesthetics.</h2>
+        <h2>By highlighting both positive feedback and constructive criticism, this section offers a balanced perspective that showcases the features our customers appreciate most and identifies areas where the product can be enhanced. Each review represents a unique experience, reflecting the diverse needs and preferences of our users, from casual listeners to tech enthusiasts.</h2>
+        <h2>Our goal in presenting these reviews is to provide potential buyers with a detailed overview of the product's performance and reliability. Through the voices of actual users, we hope to offer an authentic and relatable understanding of what it’s like to own and use AirPods in daily life. Whether you’re considering them for personal use, work, or entertainment, these customer testimonials will help you make an informed decision by offering real-world insights into the AirPods' capabilities and value.</h2>
        
-        <div class="carousel">
-            <div class="slide active"><h1> "This product changed my life!" - Jane D</h1></div>
-            <div class="slide"><h1>"Highly recommend it to everyone!" - John S.</h1></div>
-            <div class="slide"><h1>"An essential tool for my work!" - Emily R.</h1></div>
+        <button id="ViewReview">View Review</button>
+        <div id="Review" class="reviews hidden">
+          <h1>Costumers Review</h1>
+          <h2>Here's the reviews from the costumers:</h2>
+          <div class="carousel">
+            <div class="slide active"><h1> "This product makes my listening to music to be better!" - Carl D</h1></div>
+            <div class="slide"><h1>"Highly recommend it to everyone! it is super easy to use" - John S.</h1></div>
+            <div class="slide"><h1>"The music is loud and clear when I'm using this!" - Emily R.</h1></div>
         </div>
+      </div>
+
+        
     </section>
 
     <section id="pricing">
@@ -554,6 +587,18 @@
                 this.textContent = 'Hide Details';
             }
         });
+
+        document.getElementById('ViewReview').addEventListener('click', function () {
+            const detailsSection = document.getElementById('Review');
+            detailsSection.classList.toggle('hidden');
+            
+            
+            if (detailsSection.classList.contains('hidden')) {
+                this.textContent = 'View Review';
+            } else {
+                this.textContent = 'Hide Review';
+            }
+        });
         
     
 
@@ -608,7 +653,7 @@
                   statusDiv.className = 'success';
                   statusDiv.classList.remove('hidden');
                   
-                  // Reset form fields after success
+                  
                   document.getElementById('contactForm').reset();
           
                   setTimeout(() => {
