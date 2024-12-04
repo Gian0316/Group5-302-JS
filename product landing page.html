@@ -301,6 +301,86 @@
             }
           }
 
+          #contact {
+                background: linear-gradient(to bottom, #ffb6c1, #ff9999);
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            #contact h2 {
+                text-align: center;
+                color: white;
+                margin-bottom: 20px;
+                font-size: 2em;
+            }
+            #contactForm {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        
+            .form-group {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: white;
+            }
+            input, textarea {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+            }
+            input:focus, textarea:focus {
+                outline: none;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                transform: scale(1.05);
+            }
+            textarea {
+                resize: none;
+                height: 100px;
+            }
+            button {
+              padding: 10px;
+                background: #007acc;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            button:hover {
+                background: #005f99;
+                transform: scale(1.05);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            }
+            #formStatus {
+                margin-top: 20px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.1em;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            #formStatus.hidden {
+                display: none;
+            }
+        
+            #formStatus.success {
+                background-color: #4CAF50;
+            }
+        
+            #formStatus.error {
+                background-color: #f44336;
+            }
+
     </style>
 </head>
 <body>
@@ -435,18 +515,25 @@
   <br>
   <br>
   
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+        </div>
+        <button type="submit">Submit</button>
+        <div id="formStatus" class="hidden"></div>
+    </form>
+</section>
 
     <footer>
         <p>© 2024 MAWD302 Product. All rights reserved.</p>
@@ -494,6 +581,40 @@
             alert('Form submitted successfully!');
             document.getElementById('contactForm').reset();
         });
+        
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+                  e.preventDefault();
+                  const name = document.getElementById('name').value.trim();
+                  const email = document.getElementById('email').value.trim();
+                  const message = document.getElementById('message').value.trim();
+                  const statusDiv = document.getElementById('formStatus');
+          
+                  if (!name || !email || !message) {
+                      statusDiv.textContent = 'All fields are required!';
+                      statusDiv.className = 'error';
+                      statusDiv.classList.remove('hidden');
+                      return;
+                  }
+          
+                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                  if (!emailPattern.test(email)) {
+                      statusDiv.textContent = 'Please enter a valid email address.';
+                      statusDiv.className = 'error';
+                      statusDiv.classList.remove('hidden');
+                      return;
+                  }
+          
+                  statusDiv.textContent = 'Form submitted successfully!';
+                  statusDiv.className = 'success';
+                  statusDiv.classList.remove('hidden');
+                  
+                  // Reset form fields after success
+                  document.getElementById('contactForm').reset();
+          
+                  setTimeout(() => {
+                      statusDiv.classList.add('hidden');
+                  }, 3000);
+              });
     </script>
 </body>
 </html>
