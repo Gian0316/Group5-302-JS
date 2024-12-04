@@ -607,59 +607,57 @@
         });
 
         document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+    e.preventDefault();
 
-            if (!name || !email || !message) {
-                alert('All fields are required!');
-                return;
-            }
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const statusDiv = document.getElementById('formStatus');
 
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
+    if (!name || !email || !message) {
+        statusDiv.textContent = 'All fields are required!';
+        statusDiv.className = 'error';
+        statusDiv.classList.remove('hidden');
+        return;
+    }
 
-            alert('Form submitted successfully!');
-            document.getElementById('contactForm').reset();
-        });
-        
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-                  e.preventDefault();
-                  const name = document.getElementById('name').value.trim();
-                  const email = document.getElementById('email').value.trim();
-                  const message = document.getElementById('message').value.trim();
-                  const statusDiv = document.getElementById('formStatus');
-          
-                  if (!name || !email || !message) {
-                      statusDiv.textContent = 'All fields are required!';
-                      statusDiv.className = 'error';
-                      statusDiv.classList.remove('hidden');
-                      return;
-                  }
-          
-                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                  if (!emailPattern.test(email)) {
-                      statusDiv.textContent = 'Please enter a valid email address.';
-                      statusDiv.className = 'error';
-                      statusDiv.classList.remove('hidden');
-                      return;
-                  }
-          
-                  statusDiv.textContent = 'Form submitted successfully!';
-                  statusDiv.className = 'success';
-                  statusDiv.classList.remove('hidden');
-                  
-                  
-                  document.getElementById('contactForm').reset();
-          
-                  setTimeout(() => {
-                      statusDiv.classList.add('hidden');
-                  }, 3000);
-              });
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        statusDiv.textContent = 'Please enter a valid email address.';
+        statusDiv.className = 'error';
+        statusDiv.classList.remove('hidden');
+        return;
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("Form submission prevented");
+});
+    statusDiv.textContent = 'Form submitted successfully!';
+    statusDiv.className = 'success';
+    statusDiv.classList.remove('hidden');
+
+    document.getElementById('contactForm').reset();
+
+    setTimeout(() => {
+        statusDiv.classList.add('hidden');
+    }, 3000);
+});
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('contactForm');
+  
+          form.addEventListener('submit', function (e) {
+              e.preventDefault(); 
+  
+              
+              alert('Form submitted successfully!');
+  
+              
+              form.reset();
+          });
+      });
+      </script>
 </body>
 </html>
